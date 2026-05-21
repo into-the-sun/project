@@ -1,0 +1,262 @@
+/* Site-wide look: light, cute, desktop-friendly */
+
+:root {
+  --bg: #fff8fb;
+  --surface: #ffffff;
+  --text: #3d2c35;
+  --muted: #7a6570;
+  --accent: #ff8fab;
+  --accent-dark: #e86b8a;
+  --border: #f3d6e0;
+  --correct: #5cb88a;
+  --wrong: #e07a7a;
+  --shadow: 0 4px 20px rgba(255, 143, 171, 0.15);
+  --max-width: 720px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout shell */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+  color: var(--accent-dark);
+}
+
+.site-nav a {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.site-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* Typography */
+
+.page-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.page-intro {
+  color: var(--muted);
+  margin: 0 0 2rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.75rem;
+}
+
+/* Cards on home page */
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.lesson-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+}
+
+.lesson-card p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.lesson-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--accent-dark);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+/* Lesson content */
+
+.example-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.example-japanese {
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+}
+
+.example-romaji {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.example-english {
+  margin: 0;
+}
+
+.lesson-nav {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Exercise form */
+
+.exercise-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.exercise-prompt {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+
+.exercise-input-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.exercise-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.6rem 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+}
+
+.exercise-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.exercise-feedback {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.exercise-feedback.correct {
+  color: var(--correct);
+}
+
+.exercise-feedback.wrong {
+  color: var(--wrong);
+}
+
+.exercise-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.progress-text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
